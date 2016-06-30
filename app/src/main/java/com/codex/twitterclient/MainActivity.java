@@ -1,13 +1,23 @@
 package com.codex.twitterclient;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import com.codex.twitterclient.base.UIBase.AppFragmentMain;
+import com.codex.twitterclient.base.UIBase.AppMainActivity;
+
+public class MainActivity extends AppMainActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    public int onGetLayoutID() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    public void onInitialLayout() {
+
+    }
+
+    @Override
+    public AppFragmentMain getMainCurrentFragment() {
+        return null;
     }
 }

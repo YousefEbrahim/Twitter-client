@@ -3,4 +3,12 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <array name="progress_colors">
+        <item>@color/colorPrimary</item>
+        <item>@color/colorAccent</item>
+        <item>@color/colorPrimaryDark</item>
+    </array>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
 </resources>

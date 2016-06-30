@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">twitter client</string>
+    <string name="item_progress_text">Loading</string>
 </resources>
