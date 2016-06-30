@@ -1,4 +1,4 @@
-package com.codex.twitterclient.base.ServiceBase;
+package com.codex.twitterclient.base.servicebase;
 
 /**
  * Created by YousefEbrahim on 10/03/2016.

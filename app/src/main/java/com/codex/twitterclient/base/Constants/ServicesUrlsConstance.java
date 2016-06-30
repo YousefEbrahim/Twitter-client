@@ -1,4 +1,4 @@
-package com.codex.twitterclient.base.Constants;
+package com.codex.twitterclient.base.constants;
 
 
 

@@ -1,4 +1,4 @@
-package com.codex.twitterclient.base.Constants;
+package com.codex.twitterclient.base.constants;
 
 
 
@@ -10,6 +10,11 @@ public class ExceptionConstance {
     public static final short codeSuccessful = 1;
     public static final short SomethingWentWrong = 100;
 
+    /**
+     * message of Exception
+     * @param code
+     * @return
+     */
     public static int getMassage(int code) {
         switch (code) {
 
@@ -18,6 +23,11 @@ public class ExceptionConstance {
         return 0;
     }
 
+    /**
+     * icon of Exception
+     * @param code
+     * @return
+     */
     public static int getIcon(int code) {
         switch (code) {
 

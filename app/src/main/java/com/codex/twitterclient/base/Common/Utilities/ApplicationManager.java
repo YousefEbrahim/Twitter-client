@@ -1,4 +1,4 @@
-package com.codex.twitterclient.base.Common.Utilities;
+package com.codex.twitterclient.base.common.utilities;
 
 import android.app.Activity;
 import android.content.Context;

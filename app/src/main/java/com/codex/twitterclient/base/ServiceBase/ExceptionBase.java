@@ -1,7 +1,7 @@
-package com.codex.twitterclient.base.ServiceBase;
+package com.codex.twitterclient.base.servicebase;
 
 
-import com.codex.twitterclient.base.Constants.ExceptionConstance;
+import com.codex.twitterclient.base.constants.ExceptionConstance;
 
 /**
  * Created by YousefEbrahim on 02/06/2016.

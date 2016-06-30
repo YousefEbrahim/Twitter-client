@@ -1,4 +1,4 @@
-package com.codex.twitterclient.base.UIBase;
+package com.codex.twitterclient.base.uibase;
 
 
 
@@ -19,7 +19,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.codex.twitterclient.R;
-import com.codex.twitterclient.base.Common.Utilities.ApplicationManager;
+import com.codex.twitterclient.base.common.utilities.ApplicationManager;
 import com.rey.material.widget.ProgressView;
 import com.rey.material.widget.SnackBar;
 

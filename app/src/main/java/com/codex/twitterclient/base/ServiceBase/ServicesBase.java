@@ -1,9 +1,9 @@
-package com.codex.twitterclient.base.ServiceBase;
+package com.codex.twitterclient.base.servicebase;
 
 import android.text.TextUtils;
 
-import com.codex.twitterclient.base.Common.Utilities.LogUtility;
-import com.codex.twitterclient.base.Constants.ExceptionConstance;
+import com.codex.twitterclient.base.common.utilities.LogUtility;
+import com.codex.twitterclient.base.constants.ExceptionConstance;
 import com.google.gson.Gson;
 import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.OkHttpClient;

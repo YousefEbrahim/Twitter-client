@@ -1,15 +1,15 @@
-package com.codex.twitterclient.base.Common.Storage;
+package com.codex.twitterclient.base.common.storage;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.codex.twitterclient.base.Common.Utilities.ApplicationManager;
+import com.codex.twitterclient.base.common.utilities.ApplicationManager;
 /**
  * Created by bonga on 03/06/2016.
  */
 public class SharedPreferenceUtilities {
 
-//    sharedPreference Constant
+
     public  String MyPREFERENCES="UserData";
     private static SharedPreferenceUtilities sharedPreferenceUtilities;
 
@@ -18,12 +18,17 @@ public class SharedPreferenceUtilities {
         if (sharedPreferenceUtilities == null){
             sharedPreferenceUtilities = new SharedPreferenceUtilities();
         }
-
         return sharedPreferenceUtilities;
     }
     private SharedPreferenceUtilities(){
 
     }
+
+    /**
+     * put string to shared preference
+     * @param name
+     * @param value
+     */
     public  void setString(String name,String value){
         SharedPreferences sharedpreferences = ApplicationManager.getInstance().getContext().getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedpreferences.edit();
@@ -32,28 +37,21 @@ public class SharedPreferenceUtilities {
 
     }
 
+    /**
+     * get string from shared preference
+     * @param name
+     * @return
+     */
     public  String getString(String name){
         SharedPreferences sharedpreferences = ApplicationManager.getInstance().getContext().getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
-
        return sharedpreferences.getString(name,"");
 
     }
 
-
-    public  void setInt(String name,int value){
-        SharedPreferences sharedpreferences = ApplicationManager.getInstance().getContext().getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedpreferences.edit();
-        editor.putInt(name, value);
-        editor.commit();
-    }
-
-    public  int getInt(String name){
-        SharedPreferences sharedpreferences = ApplicationManager.getInstance().getContext().getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
-
-        return sharedpreferences.getInt(name,0);
-
-    }
-
+    /**
+     * remove key from shared preference
+     * @param name
+     */
     public  void removeKey (String name){
         SharedPreferences sharedpreferences = ApplicationManager.getInstance().getContext().getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedpreferences.edit();

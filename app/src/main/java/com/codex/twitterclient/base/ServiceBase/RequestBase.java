@@ -1,7 +1,7 @@
-package com.codex.twitterclient.base.ServiceBase;
+package com.codex.twitterclient.base.servicebase;
 
 
-import com.codex.twitterclient.base.DtoBase.UrlData;
+import com.codex.twitterclient.base.dtobase.UrlData;
 import com.squareup.okhttp.FormEncodingBuilder;
 import com.squareup.okhttp.RequestBody;
 

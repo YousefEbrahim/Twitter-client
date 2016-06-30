@@ -1,8 +1,8 @@
-package com.codex.twitterclient.base.DtoBase;
+package com.codex.twitterclient.base.dtobase;
 
 
 
-import com.codex.twitterclient.base.Constants.ServiceIDConstance;
+import com.codex.twitterclient.base.constants.ServiceIDConstance;
 
 import java.util.HashMap;
 import java.util.Map;

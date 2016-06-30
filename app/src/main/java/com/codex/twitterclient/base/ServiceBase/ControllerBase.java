@@ -1,9 +1,9 @@
-package com.codex.twitterclient.base.ServiceBase;
+package com.codex.twitterclient.base.servicebase;
 
 import android.app.Activity;
 
-import com.codex.twitterclient.base.UIBase.AppFragmentMain;
-import com.codex.twitterclient.base.UIBase.AppMainActivity;
+import com.codex.twitterclient.base.uibase.AppFragmentMain;
+import com.codex.twitterclient.base.uibase.AppMainActivity;
 
 
 /**
@@ -12,16 +12,18 @@ import com.codex.twitterclient.base.UIBase.AppMainActivity;
 public  abstract class ControllerBase implements  OnServiceLisnear {
     AppFragmentMain appFragmentMain = null;
    public Activity context;
+
     public ControllerBase(AppFragmentMain appFragmentMain){
         this.appFragmentMain = appFragmentMain;
         context = appFragmentMain.getActivity();
     }
+
     public ControllerBase(Activity context){
       this.context = context;
     }
 
-   public abstract <T> void update(int servesID, T response);
-   public abstract <T> void error(int servesID, T error, boolean isHandel);
+    public abstract <T> void update(int servesID, T response);
+    public abstract <T> void error(int servesID, T error, boolean isHandel);
     @Override
     public <T> void onUpdate(final int servesID, final T response) {
         context.runOnUiThread(new Runnable() {

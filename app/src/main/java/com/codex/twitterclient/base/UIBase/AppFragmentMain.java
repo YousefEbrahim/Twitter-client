@@ -1,4 +1,4 @@
-package com.codex.twitterclient.base.UIBase;
+package com.codex.twitterclient.base.uibase;
 
 
 
@@ -9,7 +9,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import com.codex.twitterclient.base.ServiceBase.ControllerBase;
+import com.codex.twitterclient.base.servicebase.ControllerBase;
 
 
 
