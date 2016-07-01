@@ -28,9 +28,5 @@ public abstract class AppFragmentMain extends Fragment {
     public abstract int onGetLayoutID();
     public abstract void onInitialLayout(View view);
     public abstract ControllerBase getControllerView();
-    public  void onWindowFocusChanged(boolean hasFocus){
-
-    }
-
 
 }

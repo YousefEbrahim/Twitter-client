@@ -6,6 +6,7 @@ package com.codex.twitterclient.base.constants;
 public class ServiceIDConstance {
     public static final int POST = 1;
     public static final int GET = 2;
+    public static final int FOLLOWERS_ID = 3;
 
 
 }

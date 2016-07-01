@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimary">#36b9ff</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
@@ -11,4 +11,14 @@
     </array>
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
+
+    <color name="fragment_main_bg_color">#ededed</color>
+
+    <color name="container_loading_bg_color">#ffffff</color>
+
+
+    <color name="swipeRefreshLayout_1">#02578d</color>
+    <color name="swipeRefreshLayout_2">#68b500</color>
+    <color name="swipeRefreshLayout_3">#ba0202</color>
+    <color name="swipeRefreshLayout_4">#2C5682</color>
 </resources>

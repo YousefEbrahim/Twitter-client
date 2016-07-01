@@ -2,10 +2,14 @@ package com.codex.twitterclient.base.common.utilities;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
+
+import com.codex.twitterclient.base.uibase.AppMainActivity;
+
 import java.util.Locale;
 
 /**
@@ -57,4 +61,5 @@ public class ApplicationManager {
 //        ft.addToBackStack(fragment.getClass().getName());
         ft.commit();
     }
+
 }

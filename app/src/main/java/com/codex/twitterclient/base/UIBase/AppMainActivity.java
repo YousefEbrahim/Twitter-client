@@ -5,7 +5,6 @@ package com.codex.twitterclient.base.uibase;
 
 
 import android.graphics.Color;
-import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
@@ -30,11 +29,12 @@ import com.rey.material.widget.SnackBar;
  */
 public abstract class AppMainActivity extends AppCompatActivity {
     public Toolbar mToolbar;
+    public ActionBar actionBar;
     private SnackBar mSnackBar;
     RelativeLayout errorLayout;
     FrameLayout app_container;
     private TextView error_text;
-
+    private TextView title_data;
 
     private LinearLayout main_progress_view;
     private ProgressView progressBarCustom;
@@ -45,32 +45,23 @@ public abstract class AppMainActivity extends AppCompatActivity {
         setContentView(R.layout.app_main_activity);
 
         ApplicationManager.getInstance().setContext(this);
-        View view = View.inflate(this, onGetLayoutID(), null);
-        app_container = (FrameLayout) findViewById(R.id.app_container);
-        errorLayout = (RelativeLayout) findViewById(R.id.errorLayout);
-        app_container.addView(view);
-        mSnackBar = (SnackBar) findViewById(R.id.main_sn);
-        error_text = (TextView) findViewById(R.id.error_text);
-        main_progress_view = (LinearLayout) findViewById(R.id.main_progress_view);
-        progressBarCustom = (ProgressView) findViewById(R.id.progress_bar);
-        main_progress_text = (TextView) findViewById(R.id.main_progress_text);
+        onInitialViews();
+
+        if (onGetLayoutID() != 0){
+            View view = View.inflate(this, onGetLayoutID(), null);
+            app_container.addView(view);
+        }
+
         if (main_progress_view != null){
             main_progress_view.setBackgroundColor(Color.TRANSPARENT);
         }
         stopProgressDialog();
-        mToolbar = (Toolbar) findViewById(R.id.toolbar);
         if (mToolbar != null) {
             setSupportActionBar(mToolbar);
-            ActionBar actionBar = getSupportActionBar();
-            if (actionBar != null) {
-                final Drawable upArrow = getResources().getDrawable(R.drawable.abc_ic_ab_back_mtrl_am_alpha);
-
-               // upArrow.setColorFilter(getResources().getColor(R.color.colorAccent), PorterDuff.Mode.SRC_ATOP);
-                getSupportActionBar().setHomeAsUpIndicator(upArrow);
-                actionBar.setHomeButtonEnabled(true);
-                actionBar.setDisplayHomeAsUpEnabled(true);
-            }
-
+            actionBar = getSupportActionBar();
+            actionBar.setHomeButtonEnabled(false);
+            actionBar.setDisplayShowTitleEnabled(false);
+            actionBar.setDisplayHomeAsUpEnabled(false);
         }
 
         onInitialLayout();
@@ -78,6 +69,22 @@ public abstract class AppMainActivity extends AppCompatActivity {
 
 
 
+    }
+    private void onInitialViews(){
+        app_container = (FrameLayout) findViewById(R.id.app_container);
+        errorLayout = (RelativeLayout) findViewById(R.id.errorLayout);
+        mSnackBar = (SnackBar) findViewById(R.id.main_sn);
+        error_text = (TextView) findViewById(R.id.error_text);
+        main_progress_view = (LinearLayout) findViewById(R.id.main_progress_view);
+        progressBarCustom = (ProgressView) findViewById(R.id.progress_bar);
+        main_progress_text = (TextView) findViewById(R.id.main_progress_text);
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        title_data = (TextView) findViewById(R.id.title_data);
+    }
+    public void loadFragment(){
+        if (getMainCurrentFragment() != null) {
+            ApplicationManager.getInstance().initFragment(this,getMainCurrentFragment() ,R.id.app_container );
+        }
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -178,5 +185,28 @@ public abstract class AppMainActivity extends AppCompatActivity {
 
     public abstract AppFragmentMain getMainCurrentFragment();
 
+   public void visibilityToolbar(boolean isVisible ){
+       if (isVisible){
+           mToolbar.setVisibility(View.VISIBLE);
+       }else{
+           mToolbar.setVisibility(View.GONE);
+       }
 
+   }
+    public void setBackArrow(){
+        if (actionBar != null) {
+            final Drawable upArrow = getResources().getDrawable(R.drawable.abc_ic_ab_back_mtrl_am_alpha);
+            // upArrow.setColorFilter(getResources().getColor(R.color.colorAccent), PorterDuff.Mode.SRC_ATOP);
+            actionBar.setHomeAsUpIndicator(upArrow);
+
+        }
+
+    }
+    public void setTitle(String title){
+        if (title != null){
+            title_data.setText(title);
+        }else{
+            title_data.setText("");
+        }
+    }
 }
